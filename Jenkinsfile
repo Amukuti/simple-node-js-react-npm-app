@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				docker.image('java:openjdk-7-jre').inside {
+				docker.image('java:openjdk-7-jre').inside() {
 					sh 'java -version'
 				}
             }
