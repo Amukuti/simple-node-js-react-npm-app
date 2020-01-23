@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:7-alpine'
-			args '-v C:/Users/Amukuti/Project/JenkinsTemp:/home/jenkins/agent'
+			args '-v "C:\Users\Amukuti\Project\JenkinsTemp":/home/jenkins/agent'
         }
     }
     stages {
