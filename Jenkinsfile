@@ -9,7 +9,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				sh 'echo env.JENKINS_HOME'
+				docker.image('java:openjdk-7-jre').inside {
+					sh 'java -version'
+				}
             }
         }
     }
