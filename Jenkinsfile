@@ -1,11 +1,14 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:7-alpine'
+			args '-v C:\Users\Amukuti\Project\JenkinsTemp:/home/jenkins/agent'
+        }
+    }
     stages {
         stage('Build') { 
             steps {
-				withDockerContainer (image: 'node:7-alpine'){
-					sh 'node --version'
-				}
+                sh 'node --version'
             }
         }
     }
