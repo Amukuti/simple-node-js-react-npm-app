@@ -9,9 +9,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                script {
-					sh(script: "npm install", returnStdout: true)
-				}
+				echo env.JENKINS_HOME
+				echo env.ITEM_ROOTDIR
             }
         }
     }
