@@ -1,14 +1,16 @@
 pipeline {
     agent {
         docker {
-            image "node:7-alpine"
-			args "-w /C/Users/Amukuti/Project/JenkinsTemp"
+            image 'node:6-alpine' 
+            args '-v /var/lib/jenkins/caches:/jenkins/caches' 
+            args '-v /var/lib/jenkins/workspace:/jenkins/workspace' 
+            args '-u root' 
         }
     }
     stages {
         stage('Build') { 
             steps {
-                sh 'node --version'
+                sh 'npm install' 
             }
         }
     }
