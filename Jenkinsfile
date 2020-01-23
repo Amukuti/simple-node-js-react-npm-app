@@ -3,7 +3,8 @@ pipeline {
         docker {
             image 'node:6-alpine' 
             args '-p 3000:3000' 
-			args '-v /var/jenkins_home:/home/jenkins/agent'
+			args '-v /var/jenkins_home/builds:/home/jenkins/agent'
+			args '-e ITEM_ROOTDIR=/home/jenkins/agent'
         }
     }
     stages {
