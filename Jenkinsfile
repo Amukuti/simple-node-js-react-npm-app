@@ -9,8 +9,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				echo env.JENKINS_HOME
-				echo env.WORKSPACE
+				sh 'echo env.JENKINS_HOME'
             }
         }
     }
