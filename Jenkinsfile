@@ -8,8 +8,8 @@ pipeline {
     }
     stages {
         stage('Build') { 
+			agent { docker 'openjdk:8-jre' }
             steps {
-				agent { docker 'openjdk:8-jre' }
 				sh "echo env.JENKINS_HOME"
 				echo env.WORKSPACE
             }
