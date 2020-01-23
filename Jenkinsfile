@@ -8,8 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				echo env.JENKINS_HOME
-				echo env.ITEM_ROOTDIR
+				echo env
             }
         }
     }
