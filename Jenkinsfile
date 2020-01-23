@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:7-alpine'
-			args '-v C:\\JenkinsDocker:/var/jenkins_home'
+			args '-v /var/run/docker.sock:/var/run/docker.sock'
         }
     }
     stages {
