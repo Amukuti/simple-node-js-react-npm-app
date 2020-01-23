@@ -1,14 +1,11 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:7-alpine'
-			args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
+    agent any
     stages {
         stage('Build') { 
             steps {
-                sh 'node --version'
+				withDockerContainer (image 'node:7-alpine'){
+					sh 'node --version'
+				}
             }
         }
     }
