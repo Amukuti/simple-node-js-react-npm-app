@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				sh "choco install nodejs"
+				sh "apt install nodejs"
 				sh "npm install"
             }
         }
