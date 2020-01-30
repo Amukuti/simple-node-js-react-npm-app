@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-				sh "echo env.JENKINS_HOME"
-				echo env.WORKSPACE
+				sh "npm install"
             }
         }
     }
