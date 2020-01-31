@@ -8,7 +8,7 @@ pipeline {
             steps {
 				bat "choco feature enable -n=allowGlobalConfirmation"
 				bat "choco install nodejs.install"
-				bat "npm install"
+				bat "npm install --save-dev cross-env"
             }
         }
 		stage('Test'){
