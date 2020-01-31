@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	environment{
+		CI = 'true'
+	}
     stages {
         stage('Build') { 
             steps {
@@ -8,5 +11,10 @@ pipeline {
 				bat "npm install"
             }
         }
+		Stage('Test'){
+			steps {
+				bat "npm test"
+			}
+		}
     }
 }
